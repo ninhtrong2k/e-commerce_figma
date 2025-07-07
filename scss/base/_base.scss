@@ -1,13 +1,21 @@
-*, ::before , ::after {
-    box-sizing: border-box ;
+*,
+::before,
+::after {
+    box-sizing: border-box;
 }
+:root {
+    --text-color: #1a162e;
+    --icon-color:  brightness(0) saturate(100%) invert(6%) sepia(64%) saturate(1392%) hue-rotate(226deg) brightness(86%) contrast(93%);
+}
+
 // Dùng rem cho dự án nên mặc định cần để front là 62.5%
 html {
     font-size: 62.5%;
 }
 body {
     font-size: 1.6rem;
-    font-family: Gordita,'sans-serif';
+    font-family: Gordita, "sans-serif";
+    color: var(--text-color);
 }
 a {
     color: inherit;
@@ -17,4 +25,12 @@ button {
     border: none;
     outline: none;
     background: transparent;
+}
+// Rest 4 thẻ có color font mặc định nó sẽ không ăn theo body 
+button , input , textarea , select {
+    font-family: inherit;
+    color: inherit;
+}
+.icon {
+    filter: var(--icon-color);
 }
